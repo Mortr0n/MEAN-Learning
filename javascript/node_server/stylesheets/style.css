@@ -1,0 +1,10 @@
+h1 {
+    color: blue;
+}
+
+.form-class {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
