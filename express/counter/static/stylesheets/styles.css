@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: .5rem;
+}
+
+button {
+    font-size: 2rem;
+    color: aqua;
+    background-color: rgb(54, 53, 53);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px gray;
+}
+
+
+
+.title-div {
+    text-align: center;
+    font-size: 5rem;
+}
+
+.plus-div, .reset-div {
+    justify-content: center;
+    text-align: center;
+    gap: 1px;
+}
