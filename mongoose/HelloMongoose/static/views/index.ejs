@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+</head>
+<body>
+    <h1>User</h1>
+    <% errors.map((err) => { %>
+        <h3><%= err %></h3>
+    <% }) %>
+    <form method="post" action="/users">
+        <label for="name">Name</label>
+        <input type="text"  name="name" />
+        
+        <label for="age">Age</label>
+        <input type="text" name="age" />
+
+        <button type="submit">Submit</button>
+    </form>
+    
+    <% users.map((user) => { %>
+        <h3><%= user.name %></h3>
+        <h3><%= user.age %></h3>
+    <% }) %>
+    
+</body>
+</html>
