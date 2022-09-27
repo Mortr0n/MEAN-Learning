@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+</head>
+<body>
+    <div class="quote-wrapper">
+        <h1>Here are some quotes</h1>
+        <div class="quotes">
+            <% quotes.map((quote) => { %>
+                <% let date = new Date(quote.createdAt).toLocaleDateString('en-US') %>
+                <h3><%= quote.name %></h3>
+                <h4>"<%= quote.quote %>"</h4>
+                <h5><%= date %></h5>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
