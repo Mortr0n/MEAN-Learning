@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Mongeese</h1>
+    <a href="/mongeese/new">
+        <button type="button">Create a mongoose</button>
+    </a>
+    <div class="mongoose-list-wrapper">
+        <ul>
+            <% mongeese.map((mongoose) => { %>
+                <li>
+                    
+                        <p>Name : <a href="/mongoose/<%=mongoose._id%>"><%=mongoose.name %></a> </p>
+                    
+                    
+                    <p>Weight: <%= mongoose.weight %></p>
+                    <p>Color: <%= mongoose.color %></p>
+                    <p><%= mongoose._id %></p>
+                    
+                    <a  href="/mongeese/edit/<%=mongoose._id%>" ><button type="button">Edit Mongoose</button></a> 
+
+                    <form action="/mongeese/delete/<%=mongoose._id%>" method="post" >
+                        <button type="submit">Delete Mongoose</button>
+                    </form> 
+                    <hr/>
+                </li>                
+            <% }) %>
+        </ul>
+        
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%=mongoose.name%></title>
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+</head>
+<body>
+    <h1>Edit <%= mongoose.name %></h1>
+    <div class="new-mongoose-wrapper">
+        <form action="/mongeese/<%=mongoose._id%>" method="post">
+        <div class="new-mongoose-form-wrapper">
+            
+                <div class="name-input-div">
+                    <label for="name">Name :</label>
+                    <input type="text" name="name" value="<%=mongoose.name%>"/>
+                </div>
+                <div class="weight-input-div">
+                    <label for="weight">Weight :</label>
+                    <input type="text" name="weight" value="<%=mongoose.weight%>"/>
+                </div>
+                <div class="color-input-div">
+                    <label for="color">Color :</label>
+                    <input type="text" name="color" value="<%=mongoose.color%>"/>
+                </div>
+           <button type="submit">Edit Mongoose</button>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

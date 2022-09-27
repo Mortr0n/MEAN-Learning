@@ -1,0 +1,9 @@
+.new-mongoose-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.mongoose-list-wrapper {
+    max-width: 800px;
+}
