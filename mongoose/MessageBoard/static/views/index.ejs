@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+</head>
+<body>
+    <h1>Message Board</h1>
+    <div class="form-div">
+        <form class="form-div" action="/message/new" method="post">
+            <div class="name-div">
+                <label for="name">Name :</label>
+                <input type="text" name="name" />
+            </div>
+            <div class="message-div">
+                <label for="message">Message :</label>
+                <input type="text" name="message" />
+            </div>
+            <button class="submit-button" type="submit">Post Message</button>
+        </form>
+        
+    </div>
+    <% messages.map((message) => { %>
+        <hr />
+        <div class="message-container">
+            <h3>Name: <%= message.name %></h3>
+        <h4>Message: <%= message.message %></h4>
+            
+                <% message.comments.map((comment) => { %>
+                    <div class="comment-wrapper">
+                        <h5>Name: <%= comment.name %></h5>
+                        <h6>Comment: <%= comment.comment %></h6>
+                    </div>
+                    
+                <% }) %> 
+
+                    <% console.log("Message ID ", message._id) %>
+        <form class="form-div" action="/comment/new/<%=message._id%>" method="post">
+            <div class="name-div">
+                <label for="name">Name :</label>
+                <input type="text" name="name" />
+            </div>
+            <div class="comment-div">
+                <label for="comment">Comment :</label>
+                <input type="text" name="comment" />
+            </div>
+            <button class="submit-button" type="submit">Post Comment</button>
+        </form>
+        </div>
+        
+    <% }) %>
+</body>
+</html>

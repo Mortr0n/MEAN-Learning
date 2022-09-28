@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+}
+.form-div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.submit-button {
+    max-width: 200px;
+}
+
+.message-container {
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px darkgray;
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.comment-wrapper {
+    border: 1px solid darkblue;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 10px;
+}
