@@ -8,6 +8,10 @@ const flash = require('express-flash');
 app.use(bodyParser.urlencoded({
     extended: true
 }))
+// Remember for api you'll use express and not bodyparser
+// app.use(express.json())
+// in MERN you used
+// app.use(express.json(), express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "./client/static")));
 app.set('views', path.join(__dirname, './client/static/views'));

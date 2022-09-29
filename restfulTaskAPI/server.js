@@ -3,13 +3,18 @@ const path = require('path');
 const app = express();
 const session = require('express-session');
 const flash = require('express-flash');
+const parser = require('body-parser');
+const cors = require('cors');
 
 
 // Remember for api you'll use express and not bodyparser
 // app.use(express.json())
 // in MERN you used
-// app.use(express.json(), express.urlencoded({ extended: true }));
-
+app.use(express.json(), express.urlencoded({ extended: true }));
+// app.use(cors({
+//     credentials: true,
+//     origin: 
+// }))
 
 
 app.use(session({secret: 'secret-sauce'}));

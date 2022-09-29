@@ -24,9 +24,9 @@ module.exports = {
     },
 
     createTask: (req, res) => {
-        console.log(req.body)
-        const task = new Task(req.body);
-        task.save()
+        console.log("TASK INFO ", req.body)
+        // const task = new Task(req.body);
+        Task.create(req.body)
             .then((newTask) => {
                 console.log("New Task ", newTask);
                 res.json(newTask);
@@ -37,10 +37,12 @@ module.exports = {
     },
 
     updateOneTask: (req, res) => {
+        console.log("ID and stuff ", req.params.id, req.body);
         Task.findByIdAndUpdate({_id: req.params.id}, req.body)
-            .then((updatedTask) => {
-                console.log("Updated Task ", updatedTask);
-                res.json(updatedTask);
+
+            .then((oldTask) => {
+                console.log("Updated Task ", oldTask);
+                res.json(oldTask);
             })
             .catch((err) => {
                 console.log("Error updating task ", err);
