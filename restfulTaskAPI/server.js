@@ -11,6 +11,7 @@ const cors = require('cors');
 // app.use(express.json())
 // in MERN you used
 app.use(express.json(), express.urlencoded({ extended: true }));
+app.use(express.static(__dirname + '/public/dist/public' ));
 // app.use(cors({
 //     credentials: true,
 //     origin: 
