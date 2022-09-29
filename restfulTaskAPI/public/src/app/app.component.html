@@ -258,6 +258,10 @@
     background-position: -.5em;
   }
 
+  .bold {
+    font-weight: 900;
+  }
+
   .github-star-badge .material-icons {
     height: 16px;
     width: 16px;
@@ -341,7 +345,7 @@
       </g>
     </svg>
 
-    <span>{{ welcome }} </span>
+    <span *ngFor="let task of tasks" >{{ task.title }} => {{task._id}} </span>
 
     <svg id="rocket-smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632" viewBox="0 0 516.119 1083.632">
       <title>Rocket Ship Smoke</title>
@@ -351,13 +355,13 @@
   </div>
 
   <!-- Resources -->
-  <h2>Resources</h2>
-  <p>Here are some links to help you get started:</p>
+  <h2>Task Listing</h2>
+  <p>Here are some tasks to help you get started:</p>
 
-  <div class="card-container">
-    <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
+  <div class="card-container" >
+    <a *ngFor="let task of tasks" class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
-      <span>Learn Angular</span>
+      <span>{{task.title}}</span>
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    </a>
 
     <a class="card" target="_blank" rel="noopener" href="https://angular.io/cli">
@@ -387,8 +391,11 @@
   </div>
 
   <!-- Next Steps -->
-  <h2>Next Steps</h2>
-  <p>What do you want to do next with your app?</p>
+  <h2>One single lonely task</h2>
+  <p><span class="bold">Title:</span> {{oneTask[0].title}} <span class="bold">ID:</span> {{oneTask[0]._id}} </p>
+  <p><span class="bold">Description:</span> {{oneTask[0].description}}</p>
+
+
 
   <input type="hidden" #selection>
 
