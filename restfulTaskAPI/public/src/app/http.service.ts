@@ -11,15 +11,21 @@ export class HttpService {
   
   getTasks() {
     // const tempObservable = this._http.get('/task');
-    return this._http.get('/task');
-
+    return this._http.get('/task'); 
     // tempObservable.subscribe(data => console.log("Got our Tasks! ", data));
   }
 
   getOneTask(taskId: String) {
     return this._http.get(`/task/${taskId}`);
-
     // oneTaskObservable.subscribe(data => console.log("Got the Task! ", data));
+  }
+
+  addTask(newTask: any) {
+    return this._http.post('/task', newTask);
+  }
+
+  editTask(taskToEdit: any) {
+    return this._http.post(`/task/edit/${taskToEdit._id}`, taskToEdit);
   }
 }
 
